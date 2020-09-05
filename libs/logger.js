@@ -20,6 +20,7 @@ const logger = winston.createLogger({
   format: combine(colorize(), timestamp(), logFormat),
   transports: [
     new winston.transports.File({ filename: "error.log", level: "error" }),
+    new winston.transports.File({ filename: "warn.log", level: "warn" }),
     new winston.transports.Console({ level: "debug" }),
   ],
 });
