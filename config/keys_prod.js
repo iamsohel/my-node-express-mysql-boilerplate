@@ -1,4 +1,13 @@
+const {
+  DATABASE,
+  HOST,
+  DB_PORT,
+  DB_USER,
+  DB_PASSWORD,
+  jwtPrivateKey,
+} = process.env;
+
 module.exports = {
-    DBURI: process.env.DBURI,
-    jwtPrivateKey: process.env.SECRET_KEY
-}
+  DBURI: `mysql://${DB_USER}:${DB_PASSWORD}@${HOST}:${DB_PORT}/${DATABASE}`,
+  jwtPrivateKey: jwtPrivateKey,
+};
